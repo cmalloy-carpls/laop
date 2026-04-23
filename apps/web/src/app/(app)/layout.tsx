@@ -1,5 +1,14 @@
-// Auth enforcement is handled entirely by middleware (src/middleware.ts).
-// This layout can safely assume a session exists.
+import { Sidebar } from '@/components/shell/Sidebar'
+import { Header } from '@/components/shell/Header'
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return <main>{children}</main>;
+  return (
+    <div className="flex min-h-screen bg-gray-50">
+      <Sidebar />
+      <div className="flex flex-col flex-1 min-w-0">
+        <Header />
+        <main className="flex-1 p-6">{children}</main>
+      </div>
+    </div>
+  )
 }
