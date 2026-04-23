@@ -1,0 +1,32 @@
+// Shared primitives
+export * from './shared/branded.js'
+export * from './shared/result.js'
+export * from './shared/tenant.js'
+export * from './shared/pagination.js'
+
+// Core entities
+export * from './entities/organization.js'
+export * from './entities/person.js'
+export * from './entities/matter.js'
+export * from './entities/engagement.js'
+export * from './entities/party.js'
+export * from './entities/problem.js'
+export * from './entities/eligibility.js'
+export * from './entities/conflict.js'
+export * from './entities/referral.js'
+export * from './entities/knowledge.js'
+export * from './entities/document.js'
+export * from './entities/funder.js'
+export * from './entities/audit.js'
+
+// Adapter contracts
+export * from './adapters/ai-model.js'
+export * from './adapters/telephony.js'
+export * from './adapters/messaging.js'
+export * from './adapters/email.js'
+export * from './adapters/storage.js'
+export * from './adapters/upstream-crm.js'
+export * from './adapters/docgen.js'
+export * from './adapters/esignature.js'
+export * from './adapters/calendar.js'
+export * from './adapters/search.js'
