@@ -33,6 +33,10 @@ function mapClerkRole(orgRole: string | null | undefined): Session['role'] {
     case 'org:admin':      return 'admin'
     case 'org:supervisor': return 'supervisor'
     case 'org:staff':      return 'staff'
-    default:               return 'readonly'
+    default:
+      // Unrecognized role slug — Clerk dashboard roles must exactly match:
+      // org:admin, org:supervisor, org:staff
+      if (orgRole) console.warn(`[auth] Unrecognized Clerk org role: "${orgRole}" — defaulting to readonly`)
+      return 'readonly'
   }
 }

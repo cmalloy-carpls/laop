@@ -1,14 +1,5 @@
-import { redirect } from "next/navigation";
-import { getSession } from "@/lib/auth";
-
-export default async function AppLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const session = await getSession();
-  if (!session) {
-    redirect("/");
-  }
+// Auth enforcement is handled entirely by middleware (src/middleware.ts).
+// This layout can safely assume a session exists.
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   return <main>{children}</main>;
 }

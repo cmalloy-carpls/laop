@@ -1,4 +1,4 @@
-import { pgTable, text, date, timestamp, jsonb, pgEnum } from "drizzle-orm/pg-core";
+import { pgTable, text, date, timestamp, jsonb, pgEnum, index } from "drizzle-orm/pg-core";
 import { organizations } from "./organizations.js";
 import { matters } from "./matters.js";
 import { persons } from "./persons.js";
@@ -39,7 +39,12 @@ export const parties = pgTable("parties", {
   updated_at: timestamp("updated_at", { withTimezone: true })
     .defaultNow()
     .notNull(),
-});
+}, (t) => [
+  // Conflict check queries filter by org + status first, then search name_snapshot
+  index("parties_org_status_idx").on(t.organization_id, t.status),
+  index("parties_dob_idx").on(t.dob_snapshot),
+  index("parties_name_snapshot_gin_idx").using("gin", t.name_snapshot),
+]);
 
 export function setupRLS(tableName: string): string[] {
   return [

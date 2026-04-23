@@ -8,7 +8,11 @@ import * as schema from "./schema/index.js";
 // WebSocket required for interactive transactions (withTenant, withPlatform)
 neonConfig.webSocketConstructor = WebSocket;
 
-const pool = new Pool({ connectionString: process.env.POSTGRES_URL! });
+if (!process.env.POSTGRES_URL) {
+  throw new Error("POSTGRES_URL is not set — cannot initialize database client");
+}
+
+const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
 
 export const db = drizzle(pool, { schema });
 
