@@ -1,0 +1,90 @@
+- generic [ref=e6]:
+  - main [ref=e8]:
+    - generic [ref=e10]:
+      - heading "Welcome to the LegalServer API Suite" [level=1] [ref=e11]
+      - paragraph [ref=e12]: The Documentation has been recently reorganized.
+      - paragraph [ref=e13]: LegalServer APIs in active development are the Core APIs.
+      - paragraph [ref=e14]: LegalServer APIs from 2020 and earlier are available under the Legacy APIs collection.
+      - paragraph [ref=e15]: There are other API collections for additional LegalServer sites (ReferralHub, Houston.AI, SimpleJustice).
+      - heading "Getting Started" [level=2] [ref=e16]:
+        - link "Getting Started" [ref=e17] [cursor=pointer]:
+          - /url: "#getting-started"
+          - generic [ref=e18]: Getting Started
+          - img [ref=e20]: 
+      - paragraph [ref=e21]:
+        - text: There is a help article about
+        - link "Getting Started" [ref=e22] [cursor=pointer]:
+          - /url: https://apidocs.legalserver.org/docs/ls-apis/ZG9jOjE1NDIyMzg-getting-started
+        - text: available.
+      - paragraph [ref=e23]:
+        - text: Feel free to also reach out to the LegalServer SiteAdmins email list (to join email
+        - link "siteadmins+subscribe@legalserver.org" [ref=e24] [cursor=pointer]:
+          - /url: mailto:siteadmins+subscribe@legalserver.org
+        - text: ) or the LegalServer API Integration email list (to join email
+        - link "api_integration+subscribe@legalserver.org" [ref=e25] [cursor=pointer]:
+          - /url: mailto:api_integration+subscribe@legalserver.org
+        - text: ) for feedback, ideas, and brainstorming from other LegalServer clients. This is a great place to get ideas on what is currently being used by LegalServer clients.
+      - heading "Reports API" [level=2] [ref=e26]:
+        - link "Reports API" [ref=e27] [cursor=pointer]:
+          - /url: "#reports-api"
+          - generic [ref=e28]: Reports API
+          - img [ref=e30]: 
+      - paragraph [ref=e31]:
+        - text: Please remember if you are looking to get data out of LegalServer, there is also our Reports API. This ties directly into specific reports and can be enabled on your site. The help article on
+        - link "Reports API" [ref=e32] [cursor=pointer]:
+          - /url: https://apidocs.legalserver.org/docs/ls-apis/8900dc1acbe57-reports-api
+        - text: explains it in more depth. The Reports API is separate from our API documentation since it interacts directly with the Reports and is configured from one report to another.
+      - heading "Support" [level=2] [ref=e33]:
+        - link "Support" [ref=e34] [cursor=pointer]:
+          - /url: "#support"
+          - generic [ref=e35]: Support
+          - img [ref=e37]: 
+      - paragraph [ref=e38]:
+        - text: For support using LegalServer's APIs, contact
+        - link "support@legalserver.org" [ref=e39] [cursor=pointer]:
+          - /url: mailto:support@legalserver.org
+        - text: . If you are receiving an error using one of these APIs, please include the API call that you are making and the error response you are receiving. Without that information, it may be difficult for us to assist. Please remove any authentication information from the API call
+      - paragraph [ref=e40]:
+        - text: If you are looking to get started utilizing these APIs and need the assistance of LegalServer Support to understand the options and limits of what is available (or are considering paying for additional development to add new fields, parameters, or features), please reach out to
+        - link "support@legalserver.org" [ref=e41] [cursor=pointer]:
+          - /url: mailto:support@legalserver.org
+        - text: with a description of your project. We'll set up a short introductory call where we can scope the work requested and can setup a Change Order, Project Proposal, or Quote as necessary.
+      - heading "Cost" [level=2] [ref=e42]:
+        - link "Cost" [ref=e43] [cursor=pointer]:
+          - /url: "#cost"
+          - generic [ref=e44]: Cost
+          - img [ref=e46]: 
+      - paragraph [ref=e47]: All Legacy LegalServer APIs are currently available for free.
+      - paragraph [ref=e48]: Some of the Core APIs are split into a Premium API tier consisting of the new Matter APIs, the Guided Navigation Process APIs, and the Conflict Check API. The remainder are included with LegalServer at no additional cost. This is subject to change and any changes will be announced here.
+      - paragraph [ref=e49]: Some LegalServer modules have their own endpoints such as SimpleJustice, ReferralHub, and Houston.ai. Those sets of APIs all require active use of and subscription to those underlying modules.
+      - paragraph [ref=e50]:
+        - text: For dedicated troubleshooting, one on one work with a support staffer, or custom development, it may be necessary to reach out to LegalServer sales to reserve a bundle of support hours. Please reach out to
+        - link "support@legalserver.org" [ref=e51] [cursor=pointer]:
+          - /url: mailto:support@legalserver.org
+        - text: with details of your proposed project to start the process.
+  - generic [ref=e52]:
+    - link "LegalServer" [ref=e54] [cursor=pointer]:
+      - /url: /
+      - img "LegalServer" [ref=e57]
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - img [ref=e65]: 
+        - textbox "Search Project" [ref=e66]:
+          - /placeholder: Search
+      - group [ref=e71]:
+        - link "Home" [ref=e73] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e74]:
+            - img [ref=e78]:  
+            - generic [ref=e80]: Home
+    - link "Sign in" [ref=e82] [cursor=pointer]:
+      - /url: /auth
+      - generic [ref=e83]:  
+      - generic [ref=e84]: Sign in
+      - generic [ref=e86]: 
+    - link "powered by Stoplight" [ref=e87] [cursor=pointer]:
+      - /url: https://stoplight.io/?utm_source=workspaces&utm_medium=legalserver&utm_campaign=powered_by&utm_content=/
+      - generic [ref=e88]:  
+      - generic [ref=e89]:
+        - text: powered by
+        - strong [ref=e90]: Stoplight

@@ -1,0 +1,27 @@
+- generic [ref=e6]:
+  - main [ref=e8]
+  - generic [ref=e10]:
+    - link "LegalServer" [ref=e12] [cursor=pointer]:
+      - /url: /
+      - img "LegalServer" [ref=e15]
+    - generic [ref=e20]:
+      - link "Home" [ref=e21] [cursor=pointer]:
+        - /url: /
+        - img [ref=e22]: 
+        - generic [ref=e23]: Home
+      - generic [ref=e24]:
+        - generic "Public APIs" [ref=e25]:
+          - img [ref=e27]:  
+        - link "Public APIs" [ref=e28] [cursor=pointer]:
+          - /url: /docs/ls-apis
+    - link "Sign in" [ref=e29] [cursor=pointer]:
+      - /url: /auth
+      - generic [ref=e30]:  
+      - generic [ref=e31]: Sign in
+      - generic [ref=e33]: 
+    - link "powered by Stoplight" [ref=e34] [cursor=pointer]:
+      - /url: https://stoplight.io/?utm_source=workspaces&utm_medium=legalserver&utm_campaign=powered_by&utm_content=/docs/ls-apis/3dc21c8c4932f-create-a-matter
+      - generic [ref=e35]:  
+      - generic [ref=e36]:
+        - text: powered by
+        - strong [ref=e37]: Stoplight
