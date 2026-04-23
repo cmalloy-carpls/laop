@@ -8,8 +8,8 @@ import {
   jsonb,
   pgEnum,
 } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import type { PersonName, Phone, EmailContact, Address } from "../types.js";
+import { organizations } from "./organizations";
+import type { PersonName, Phone, EmailContact, Address } from "../types";
 
 export const incomePeriodEnum = pgEnum("income_period", [
   "annual",

@@ -1,7 +1,7 @@
 import { pgTable, text, timestamp, pgEnum } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { persons } from "./persons.js";
-import { problems } from "./problems.js";
+import { organizations } from "./organizations";
+import { persons } from "./persons";
+import { problems } from "./problems";
 
 export const matterStatusEnum = pgEnum("matter_status", [
   "open",

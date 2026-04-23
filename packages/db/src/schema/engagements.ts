@@ -1,8 +1,8 @@
 import { pgTable, text, timestamp, pgEnum } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { matters } from "./matters.js";
-import { programs } from "./programs.js";
-import { users } from "./users.js";
+import { organizations } from "./organizations";
+import { matters } from "./matters";
+import { programs } from "./programs";
+import { users } from "./users";
 
 export const serviceTypeEnum = pgEnum("service_type", [
   "brief-advice",

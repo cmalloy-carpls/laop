@@ -1,8 +1,8 @@
 import { pgTable, text, date, timestamp, jsonb, pgEnum, index } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { matters } from "./matters.js";
-import { persons } from "./persons.js";
-import type { PersonName } from "../types.js";
+import { organizations } from "./organizations";
+import { matters } from "./matters";
+import { persons } from "./persons";
+import type { PersonName } from "../types";
 
 export const partyRoleEnum = pgEnum("party_role", [
   "client",

@@ -1,7 +1,7 @@
 import { pgTable, text, boolean, timestamp, pgEnum } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { engagements } from "./engagements.js";
-import { users } from "./users.js";
+import { organizations } from "./organizations";
+import { engagements } from "./engagements";
+import { users } from "./users";
 
 export const referralStatusEnum = pgEnum("referral_status", [
   "pending",

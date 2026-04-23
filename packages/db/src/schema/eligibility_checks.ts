@@ -9,11 +9,11 @@ import {
   jsonb,
   pgEnum,
 } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { engagements } from "./engagements.js";
-import { programs } from "./programs.js";
-import { users } from "./users.js";
-import type { EligibilityReason } from "../types.js";
+import { organizations } from "./organizations";
+import { engagements } from "./engagements";
+import { programs } from "./programs";
+import { users } from "./users";
+import type { EligibilityReason } from "../types";
 
 export const eligibilityMethodEnum = pgEnum("eligibility_method", [
   "automated",

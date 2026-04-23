@@ -1,6 +1,6 @@
 import { pgTable, text, boolean, date, timestamp } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { funders } from "./funders.js";
+import { organizations } from "./organizations";
+import { funders } from "./funders";
 
 export const programs = pgTable("programs", {
   id: text("id")

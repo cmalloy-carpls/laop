@@ -1,8 +1,8 @@
 import { pgTable, text, bigint, timestamp, pgEnum } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { matters } from "./matters.js";
-import { engagements } from "./engagements.js";
-import { users } from "./users.js";
+import { organizations } from "./organizations";
+import { matters } from "./matters";
+import { engagements } from "./engagements";
+import { users } from "./users";
 
 export const docSourceEnum = pgEnum("doc_source", [
   "upload",

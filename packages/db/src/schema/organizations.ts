@@ -1,5 +1,5 @@
 import { pgTable, text, timestamp, jsonb, pgEnum } from "drizzle-orm/pg-core";
-import type { OperatingProfile } from "../types.js";
+import type { OperatingProfile } from "../types";
 
 export const orgStatusEnum = pgEnum("org_status", [
   "active",

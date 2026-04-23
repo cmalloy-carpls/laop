@@ -6,10 +6,10 @@ import {
   timestamp,
   pgEnum,
 } from "drizzle-orm/pg-core";
-import { organizations } from "./organizations.js";
-import { engagements } from "./engagements.js";
-import { parties } from "./parties.js";
-import { users } from "./users.js";
+import { organizations } from "./organizations";
+import { engagements } from "./engagements";
+import { parties } from "./parties";
+import { users } from "./users";
 
 export const conflictTierEnum = pgEnum("conflict_tier", [
   "red",
