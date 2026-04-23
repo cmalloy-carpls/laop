@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { eq, and, or, sql } from 'drizzle-orm'
+import { eq, and, or, sql, desc } from 'drizzle-orm'
 import { router, protectedProcedure } from '../trpc'
 import { withTenant } from '@laop/db'
 import { persons } from '@laop/db/schema'
@@ -81,6 +81,30 @@ export const personRouter = router({
             eq(persons.organization_id, ctx.session.organizationId),
           ))
         return person ?? null
+      })
+    }),
+
+  list: protectedProcedure
+    .input(z.object({
+      limit: z.number().int().min(1).max(100).default(50),
+      offset: z.number().int().min(0).default(0),
+    }).optional())
+    .query(async ({ ctx, input }) => {
+      const orgId = asOrganizationId(ctx.session.organizationId)
+      return withTenant(orgId, null as any, async (tx) => {
+        return tx
+          .select()
+          .from(persons)
+          .where(and(
+            eq(persons.organization_id, ctx.session.organizationId),
+            eq(persons.status, 'active'),
+          ))
+          .orderBy(
+            sql`${persons.primary_name}->>'last' ASC`,
+            sql`${persons.primary_name}->>'first' ASC`,
+          )
+          .limit(input?.limit ?? 50)
+          .offset(input?.offset ?? 0)
       })
     }),
 

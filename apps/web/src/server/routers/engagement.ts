@@ -1,11 +1,40 @@
 import { z } from 'zod'
-import { eq, and } from 'drizzle-orm'
+import { eq, and, desc } from 'drizzle-orm'
 import { router, protectedProcedure } from '../trpc'
 import { withTenant } from '@laop/db'
 import { engagements, matters, persons, problems } from '@laop/db/schema'
 import { asOrganizationId } from '@laop/contracts'
 
 export const engagementRouter = router({
+  list: protectedProcedure
+    .input(z.object({
+      limit: z.number().int().min(1).max(100).default(50),
+      offset: z.number().int().min(0).default(0),
+      status: z.enum(['intake','conflict-check','eligible','ineligible','open','closed','referred']).optional(),
+    }).optional())
+    .query(async ({ ctx, input }) => {
+      const orgId = asOrganizationId(ctx.session.organizationId)
+      return withTenant(orgId, null as any, async (tx) => {
+        return tx
+          .select({
+            engagement: engagements,
+            person: persons,
+            problem: problems,
+          })
+          .from(engagements)
+          .innerJoin(matters, eq(engagements.matter_id, matters.id))
+          .innerJoin(persons, eq(matters.person_id, persons.id))
+          .innerJoin(problems, eq(matters.problem_id, problems.id))
+          .where(and(
+            eq(engagements.organization_id, ctx.session.organizationId),
+            input?.status ? eq(engagements.status, input.status) : undefined,
+          ))
+          .orderBy(desc(engagements.opened_at))
+          .limit(input?.limit ?? 50)
+          .offset(input?.offset ?? 0)
+      })
+    }),
+
   create: protectedProcedure
     .input(z.object({
       matterId: z.string(),
