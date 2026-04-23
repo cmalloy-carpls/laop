@@ -1,7 +1,3 @@
 packages:
-  - "apps/*"
-  - "packages/contracts"
-  - "packages/ui"
-  - "packages/core/*"
-  - "packages/adapters/*"
-  - "packages/profiles/*"
+  - 'apps/*'
+  - 'packages/*'

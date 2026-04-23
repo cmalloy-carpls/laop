@@ -19,6 +19,12 @@
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
+    },
+    "@laop/db#generate": {
+      "cache": false
+    },
+    "@laop/db#migrate": {
+      "cache": false
     }
   }
 }
