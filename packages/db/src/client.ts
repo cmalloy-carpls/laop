@@ -2,7 +2,7 @@ import { Pool, neonConfig } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-serverless";
 import { sql } from "drizzle-orm";
 import WebSocket from "ws";
-import type { OrganizationId, UserId } from "./types.js";
+
 import * as schema from "./schema/index.js";
 
 // WebSocket required for interactive transactions (withTenant, withPlatform)
@@ -17,8 +17,8 @@ const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
 export const db = drizzle(pool, { schema });
 
 export async function withTenant<T>(
-  orgId: OrganizationId,
-  userId: UserId | null,
+  orgId: string,
+  userId: string | null,
   fn: (tx: typeof db) => Promise<T>,
 ): Promise<T> {
   return db.transaction(async (tx) => {

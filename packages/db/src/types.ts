@@ -4,7 +4,8 @@ export type UserId = string & { readonly __brand: "UserId" };
 export interface PersonName {
   first: string;
   last: string;
-  middle?: string;
+  middle?: string | null;
+  suffix?: string | null;
 }
 
 export interface Phone {
@@ -18,11 +19,13 @@ export interface EmailContact {
 }
 
 export interface Address {
-  street: string;
+  line1: string;
+  line2?: string | null;
   city: string;
-  state: string;
-  zip: string;
-  country?: string;
+  stateCode: string;
+  postalCode: string;
+  countyFips?: string | null;
+  primary?: boolean;
 }
 
 export type OperatingProfile = Record<string, unknown>;
